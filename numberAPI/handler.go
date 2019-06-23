@@ -4,7 +4,6 @@ import (
 	"context"
 	"log"
 	"strings"
-
 	//"strings"
 )
 
@@ -15,5 +14,5 @@ func (s *Server) Get(ctx context.Context, in *Request) (*Response, error) {
 	log.Printf("Received message: %s", in.Name)
 	num := strings.TrimSpace(strings.ToLower(in.Name))
 	val, _ := NumbersDict[num]
-	return &Response{Value:val}, nil
+	return &Response{Value: val}, nil
 }

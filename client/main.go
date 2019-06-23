@@ -25,7 +25,7 @@ func main() {
 	for {
 		fmt.Print("Enter number name: ")
 		userInput, _ := reader.ReadString('\n')
-		request := numberAPI.Request{Name:userInput}
+		request := numberAPI.Request{Name: userInput}
 		log.Printf("Your request: %v", request)
 		response, err := c.Get(context.Background(), &request)
 		if err != nil {
@@ -35,5 +35,3 @@ func main() {
 	}
 
 }
-
-
