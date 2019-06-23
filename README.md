@@ -1,0 +1,16 @@
+# Simple GRPC App
+
+[![Go Report Card]()]()
+
+Simple GRPC example app with Golang.
+
+## Usage
+
+1. Run server with ```go run server/main.go```
+2. Run client with ```go run client/main.go```
+3. Type ```pi```, ```e```, ... in client app.
+
+## To-Do
+
+- [ ] Auth
+- [ ] Secure Channel (SSL/TLS)

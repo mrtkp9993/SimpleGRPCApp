@@ -1,0 +1,15 @@
+ syntax = "proto3";
+
+ package numberAPI;
+
+ message Request {
+     string name = 1;
+ }
+
+ message Response {
+     double value = 1;
+ }
+
+ service GetNumber {
+     rpc Get(Request) returns (Response);
+ }
