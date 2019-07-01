@@ -10,8 +10,19 @@ Simple GRPC example app with Golang.
 2. Run client with ```go run client/main.go```
 3. Type ```pi```, ```e```, ... in client app.
 
+## Generating certificates
+
+```
+$ openssl genrsa -out cert/server.key 2048
+$ openssl req -new -x509 -sha256 -key cert/server.key -out cert/server.crt -days 3650
+$ openssl req -new -sha256 -key cert/server.key -out cert/server.csr
+$ openssl x509 -req -sha256 -in cert/server.csr -signkey cert/server.key -out cert/server.crt -days 3650
+```
+
+*Source*: [Link](https://www.digitalocean.com/community/tutorials/openssl-essentials-working-with-ssl-certificates-private-keys-and-csrs)
+
 ## To-Do
 
 - [ ] Auth
-- [ ] Secure Channel (SSL/TLS)
+- [x] Secure Channel (SSL/TLS)
 - [ ] REST gateway 

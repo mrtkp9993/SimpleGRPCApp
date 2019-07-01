@@ -14,6 +14,7 @@ import (
 func main() {
 	var conn *grpc.ClientConn
 
+	// Write your Common Name (e.g. server FQDN or YOUR name) as `serverNameOverride`
 	creds, err := credentials.NewClientTLSFromFile("cert/server.crt", "")
 	if err != nil {
 		log.Fatalf("Cannot load TLS file: %s", err)
