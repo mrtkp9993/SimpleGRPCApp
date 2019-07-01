@@ -16,7 +16,7 @@ func main() {
 
 	s := numberAPI.Server{}
 
-	creds, err := credentials.NewServerTLSFromFile("cert/server.crt", "cert/server.key")
+	creds, err := credentials.NewServerTLSFromFile("cert/server.crt","cert/server.key")
 	if err != nil {
 		log.Fatalf("Cannot load TLS file: %s", err)
 	}
