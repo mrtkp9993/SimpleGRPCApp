@@ -14,3 +14,4 @@ Simple GRPC example app with Golang.
 
 - [ ] Auth
 - [ ] Secure Channel (SSL/TLS)
+- [ ] REST gateway 
