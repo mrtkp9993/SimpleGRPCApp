@@ -1,1 +1,3 @@
 .idea
+cert/*.crt
+cert/*.key
