@@ -3,6 +3,7 @@ package main
 import (
 	"SimpleGRPCApp/numberAPI"
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/credentials"
 	"log"
 	"net"
 )
@@ -14,7 +15,14 @@ func main() {
 	}
 
 	s := numberAPI.Server{}
-	grpcServer := grpc.NewServer()
+
+	creds, err := credentials.NewServerTLSFromFile("cert/server.crt", "cert/server.key")
+	if err != nil {
+		log.Fatalf("Cannot load TLS file: %s", err)
+	}
+
+	opts := []grpc.ServerOption{grpc.Creds(creds)}
+	grpcServer := grpc.NewServer(opts...)
 
 	numberAPI.RegisterGetNumberServer(grpcServer, &s)
 
