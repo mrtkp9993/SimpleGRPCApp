@@ -1,0 +1,6 @@
+[server]
+target = "SERVER_IP:PORT"
+
+[cert]
+certfile = "cert/server.crt"
+servername = "SERVER_NAME" # Common Name (e.g. server FQDN or YOUR name)

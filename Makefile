@@ -20,5 +20,5 @@ bin:
 
 .PHONY: clean
 clean:
-		rm -f $(BINARY_SERVER)
-		rm -f $(BINARY_CLIENT)
+		rm -f ${BINARY_SERVER}-$(OS)-${TAG}
+		rm -f ${BINARY_CLIENT}-$(OS)-${TAG}

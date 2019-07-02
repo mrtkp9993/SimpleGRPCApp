@@ -5,22 +5,32 @@ import (
 	"bufio"
 	"context"
 	"fmt"
+	"github.com/spf13/viper"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
 	"log"
 	"os"
 )
 
+func init() {
+	viper.SetConfigName("config")
+	viper.SetConfigType("toml")
+	viper.AddConfigPath(".")
+	err := viper.ReadInConfig()
+	if err != nil {
+		fmt.Println(err.Error())
+	}
+}
+
 func main() {
 	var conn *grpc.ClientConn
 
-	// Write your Common Name (e.g. server FQDN or YOUR name) as `serverNameOverride`
-	creds, err := credentials.NewClientTLSFromFile("cert/server.crt", "")
+	creds, err := credentials.NewClientTLSFromFile(viper.GetString("cert.certfile"), viper.GetString("cert.servername"))
 	if err != nil {
 		log.Fatalf("Cannot load TLS file: %s", err)
 	}
 
-	conn, err = grpc.Dial(":7777", grpc.WithTransportCredentials(creds))
+	conn, err = grpc.Dial(viper.GetString("server.target"), grpc.WithTransportCredentials(creds))
 	if err != nil {
 		log.Fatalf("Cannot connect: %s", err)
 	}

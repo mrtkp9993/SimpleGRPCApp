@@ -1,0 +1,7 @@
+[server]
+network = "tcp"
+port = ":PORT"
+
+[cert]
+certfile = "cert/server.crt"
+keyfile = "cert/server.key"
