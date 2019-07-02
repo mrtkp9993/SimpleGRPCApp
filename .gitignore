@@ -1,4 +1,4 @@
 .idea
-cert/*.crt
-cert/*.key
-cert/*.csr
+server.crt
+server.key
+server.csr
