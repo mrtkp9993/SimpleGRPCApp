@@ -23,6 +23,5 @@ $ openssl x509 -req -sha256 -in cert/server.csr -signkey cert/server.key -out ce
 
 ## To-Do
 
-- [ ] Auth
 - [x] Secure Channel (SSL/TLS)
 - [ ] REST gateway 
