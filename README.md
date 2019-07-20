@@ -20,9 +20,3 @@ $ openssl x509 -req -sha256 -in cert/server.csr -signkey cert/server.key -out ce
 ```
 
 *Source*: [Link](https://www.digitalocean.com/community/tutorials/openssl-essentials-working-with-ssl-certificates-private-keys-and-csrs)
-
-## To-Do
-
-- [ ] Auth
-- [x] Secure Channel (SSL/TLS)
-- [ ] REST gateway 
