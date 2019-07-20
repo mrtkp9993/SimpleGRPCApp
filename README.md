@@ -6,8 +6,8 @@ Simple GRPC example app with Golang.
 
 ## Usage
 
-1. Run server with ```go run server/main.go```
-2. Run client with ```go run client/main.go```
+1. Run server.
+2. Run client.
 3. Type ```pi```, ```e```, ... in client app.
 
 ## Generating certificates
